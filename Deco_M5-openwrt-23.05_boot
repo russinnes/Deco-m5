@@ -1,0 +1,359 @@
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.BF.3.1.1-00103
+S - IMAGE_VARIANT_STRING=DAABANAZA
+S - OEM_IMAGE_VERSION_STRING=CRM
+S - Boot Config, 0x00000021
+S - Core 0 Frequency, 0 MHz
+B -       262 - PBL, Start
+B -      1342 - bootable_media_detect_entry, Start
+B -      1685 - bootable_media_detect_success, Start
+B -      1699 - elf_loader_entry, Start
+B -      5118 - auth_hash_seg_entry, Start
+B -      7289 - auth_hash_seg_exit, Start
+B -    586682 - elf_segs_hash_verify_entry, Start
+B -    704068 - PBL, End
+B -    704092 - SBL1, Start
+B -    791344 - pm_device_init, Start
+D -         6 - pm_device_init, Delta
+B -    792886 - boot_flash_init, Start
+D -     65920 - boot_flash_init, Delta
+B -    862843 - boot_config_data_table_init, Start
+D -      3820 - boot_config_data_table_init, Delta - (419 Bytes)
+B -    870046 - clock_init, Start
+D -      7546 - clock_init, Delta
+B -    882098 - CDT version:2,Platform ID:8,Major ID:1,Minor ID:0,Subtype:1
+B -    885586 - sbl1_ddr_set_params, Start
+B -    890574 - cpr_init, Start
+D -         2 - cpr_init, Delta
+B -    895065 - Pre_DDR_clock_init, Start
+D -         5 - Pre_DDR_clock_init, Delta
+D -     13148 - sbl1_ddr_set_params, Delta
+B -    908347 - pm_driver_init, Start
+D -         2 - pm_driver_init, Delta
+B -    978480 - sbl1_wait_for_ddr_training, Start
+D -        29 - sbl1_wait_for_ddr_training, Delta
+B -    993989 - Image Load, Start
+D -    138274 - QSEE Image Loaded, Delta - (269176 Bytes)
+B -   1132761 - Image Load, Start
+D -      1435 - SEC Image Loaded, Delta - (2048 Bytes)
+B -   1143015 - Image Load, Start
+D -    220842 - APPSBL Image Loaded, Delta - (452015 Bytes)
+B -   1364280 - QSEE Execution, Start
+D -        60 - QSEE Execution, Delta
+B -   1370530 - SBL1, End
+D -    668517 - SBL1, Delta
+S - Flash Throughput, 2000 KB/s  (724010 Bytes,  361875 us)
+S - DDR Frequency, 672 MHz
+
+
+U-Boot 2012.07 [Chaos Calmer 15.05.1,unknown] (Jun 24 2019 - 15:45:53)
+
+smem ram ptable found: ver: 1 len: 3
+DRAM:  256 MiB
+machid : 0x8010001
+NAND:  SF: Detected W25Q256 with page size 64 KiB, total 32 MiB
+ipq_spi: page_size: 0x100, sector_size: 0x10000, size: 0x2000000
+32 MiB
+SF: Detected W25Q256 with page size 64 KiB, total 32 MiB
+MAC is 00 00
+MMC:   
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+machid: 8010001
+flash_type: 0
+Net:   MAC0 addr:0:3:7f:ba:db:ad
+PHY ID1: 0x4d
+PHY ID2: 0xd0b2
+ipq40xx_ess_sw_init done
+eth0
+disable phy 3 val is 0x1840
+disable phy 4 val is 0x1840
+Enter magic string to stop autoboot in 1 seconds
+SF: Detected W25Q256 with page size 64 KiB, total 32 MiB
+## Booting kernel from FIT Image at 84000000 ...
+   Using 'config@1' configuration
+   Trying 'kernel-1' kernel subimage
+     Description:  ARM OpenWrt Linux-5.15.167
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x840000e4
+     Data Size:    2969472 Bytes = 2.8 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80208000
+     Entry Point:  0x80208000
+     Hash algo:    crc32
+     Hash value:   c413e227
+     Hash algo:    sha1
+     Hash value:   7905d53f88c051b518f5339ea2c5c37d68db63e3
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Flattened Device Tree from FIT Image at 84000000
+   Using 'config@1' configuration
+   Trying 'fdt-1' FDT blob subimage
+     Description:  ARM OpenWrt tplink_deco-m5-v3 device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x842d51a0
+     Data Size:    18644 Bytes = 18.2 KiB
+     Architecture: ARM
+     Hash algo:    crc32
+     Hash value:   69d5af12
+     Hash algo:    sha1
+     Hash value:   9cbee80ffc5d65486481ccfc9658258319fc5ecc
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x842d51a0
+   Loading Kernel Image ... OK
+OK
+   Loading Device Tree to 862a7000, end 862ae8d3 ... OK
+ipq: fdt fixup unable to find compatible node
+Device nand0 not found!
+eth0 MAC Address from ART is not valid
+eth1 MAC Address from ART is not valid
+Using machid 0x8010001 from environment
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.15.167 (builder@buildhost) (arm-openwrt-linux-muslgnueabi-gcc (OpenWrt GCC 12.3.0 r24106-10cc5fcd00) 12.3.0, GNU ld (GNU Binutils) 2.40.0) #0 SMP Mon Sep 23 12:34:46 2024
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: TP-Link Deco M5 v3
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x000000008fffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x0000000087dfffff]
+[    0.000000]   node   0: [mem 0x0000000087e00000-0x0000000087ffffff]
+[    0.000000]   node   0: [mem 0x0000000088000000-0x000000008fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x000000008fffffff]
+[    0.000000] percpu: Embedded 12 pages/cpu s19660 r8192 d21300 u49152
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 64960
+[    0.000000] Kernel command line: root=mtd:1:rootfs rootfstype=squashfs rootwait root=/dev/mtdblock16
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 247204K/262144K available (6768K kernel code, 611K rwdata, 1020K rodata, 1024K init, 246K bss, 14940K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] arch_timer: cp15 timer(s) running at 48.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xb11fd3bfb, max_idle_ns: 440795203732 ns
+[    0.000001] sched_clock: 56 bits at 48MHz, resolution 20ns, wraps every 4398046511096ns
+[    0.000024] Switching to timer-based delay loop, resolution 20ns
+[    0.000320] Calibrating delay loop (skipped), value calculated using timer frequency.. 96.00 BogoMIPS (lpj=480000)
+[    0.000348] CPU: Testing write buffer coherency: ok
+[    0.000402] pid_max: default: 32768 minimum: 301
+[    0.001237] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.001269] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.003213] qcom_scm: convention: smc legacy
+[    0.004404] Setting up static identity map for 0x80300000 - 0x8030003c
+[    0.004574] rcu: Hierarchical SRCU implementation.
+[    0.005147] smp: Bringing up secondary CPUs ...
+[    0.008523] smp: Brought up 1 node, 4 CPUs
+[    0.008559] SMP: Total of 4 processors activated (384.00 BogoMIPS).
+[    0.008576] CPU: All CPU(s) started in SVC mode.
+[    0.015454] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.015617] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.015652] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.016019] pinctrl core: initialized pinctrl subsystem
+[    0.018050] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.018427] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.019818] thermal_sys: Registered thermal governor 'step_wise'
+[    0.020278] cpuidle: using governor ladder
+[    0.020338] cpuidle: using governor menu
+[    0.049235] cryptd: max_cpu_qlen set to 1000
+[    0.054000] usbcore: registered new interface driver usbfs
+[    0.054081] usbcore: registered new interface driver hub
+[    0.054171] usbcore: registered new device driver usb
+[    0.054230] pps_core: LinuxPPS API ver. 1 registered
+[    0.054243] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.054273] PTP clock support registered
+[    0.056453] clocksource: Switched to clocksource arch_sys_counter
+[    0.057899] NET: Registered PF_INET protocol family
+[    0.058145] IP idents hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.059080] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.059131] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.059154] TCP established hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.059197] TCP bind hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.059254] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.059398] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    0.059446] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    0.059776] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.059831] PCI: CLS 0 bytes, default 64
+[    0.062207] workingset: timestamp_bits=14 max_order=16 bucket_order=2
+[    0.068438] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.068471] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.199458] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 248)
+[    0.203806] bam-dma-engine 8e04000.dma: num-channels unspecified in dt
+[    0.203839] bam-dma-engine 8e04000.dma: num-ees unspecified in dt
+[    0.204698] tcsr 194b000.tcsr: setting usb hs phy mode select = e700e7
+[    0.204809] tcsr 1949000.tcsr: setting wifi_glb_cfg = 41000000
+[    0.204902] tcsr 1957000.tcsr: setting wifi_noc_memtype_m0_m2 = 2222222
+[    0.204991] tcsr 1953000.ess_tcsr: setting ess interface select = 0
+[    0.205311] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    0.207580] msm_serial 78af000.serial: msm_serial: detected port #0
+[    0.207640] msm_serial 78af000.serial: uartclk = 1843200
+[    0.207701] 78af000.serial: ttyMSM0 at MMIO 0x78af000 (irq = 34, base_baud = 115200) is a MSM
+[    0.207739] msm_serial: console setup on port #0
+[    0.758215] printk: console [ttyMSM0] enabled
+[    0.763536] msm_serial 78b0000.serial: msm_serial: detected port #1
+[    0.767206] msm_serial 78b0000.serial: uartclk = 1843200
+[    0.773287] 78b0000.serial: ttyMSM1 at MMIO 0x78b0000 (irq = 35, base_baud = 115200) is a MSM
+[    0.779210] msm_serial: driver initialized
+[    0.793185] loop: module loaded
+[    0.794328] spi_qup 78b5000.spi: IN:block:16, fifo:64, OUT:block:16, fifo:64
+[    0.797202] spi-nor spi0.0: w25q256 (32768 Kbytes)
+[    0.802513] 15 fixed-partitions partitions found on MTD device spi0.0
+[    0.807114] OF: Bad cell count for /soc/spi@78b5000/m25p80@0/partitions
+[    0.813567] OF: Bad cell count for /soc/spi@78b5000/m25p80@0/partitions
+[    0.820461] OF: Bad cell count for /soc/spi@78b5000/m25p80@0/partitions
+[    0.826619] OF: Bad cell count for /soc/spi@78b5000/m25p80@0/partitions
+[    0.833643] Creating 15 MTD partitions on "spi0.0":
+[    0.839795] 0x000000000000-0x000000030000 : "0:SBL1"
+[    0.845289] 0x000000030000-0x000000040000 : "0:BOOTCONFIG"
+[    0.850451] 0x000000040000-0x000000050000 : "0:MIBIB"
+[    0.855701] 0x000000050000-0x000000060000 : "0:BOOTCONFIG1"
+[    0.860915] 0x000000060000-0x0000000c0000 : "0:QSEE"
+[    0.866139] 0x0000000c0000-0x0000000d0000 : "0:CDT"
+[    0.871474] 0x0000000d0000-0x0000000e0000 : "0:DDRPARAMS"
+[    0.875965] 0x0000000e0000-0x0000000f0000 : "0:APPSBLENV"
+[    0.881599] 0x0000000f0000-0x000000170000 : "0:APPSBL"
+[    0.887044] 0x000000170000-0x000000180000 : "0:ART"
+[    0.892008] 0x000000180000-0x000000240000 : "OPAQUE"
+[    0.896899] 0x000000240000-0x000000540000 : "0:HLOS"
+[    0.901973] 0x000000540000-0x000000d10000 : "0:rootfs"
+[    0.906958] 0x000000d10000-0x000000d90000 : "0:APPSBL_1"
+[    0.911871] 0x000000d90000-0x000001dd0000 : "firmware"
+[    0.919943] 2 fit-fw partitions found on MTD device firmware
+[    0.921710] 0x000000d90000-0x000001070000 : "kernel"
+[    0.928210] 0x000001190000-0x000001dd0000 : "rootfs"
+[    0.933048] mtd: setting mtd16 (rootfs) as root device
+[    0.937689] 1 squashfs-split partitions found on MTD device rootfs
+[    0.942370] 0x000001560000-0x000001dd0000 : "rootfs_data"
+[    0.982746] ipqess-edma c080000.ethernet: generated random MAC address ce:3e:06:86:af:af
+[    1.007808] i2c_dev: i2c /dev entries driver
+[    1.008070] i2c_qup 78b7000.i2c: using default clock-frequency 100000
+[    1.013857] sdhci: Secure Digital Host Controller Interface driver
+[    1.017532] sdhci: Copyright(c) Pierre Ossman
+[    1.023566] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.031995] NET: Registered PF_INET6 protocol family
+[    1.035415] Segment Routing with IPv6
+[    1.038785] In-situ OAM (IOAM) with IPv6
+[    1.042354] NET: Registered PF_PACKET protocol family
+[    1.046314] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    1.051600] 8021q: 802.1Q VLAN Support v1.8
+[    1.064336] Registering SWP/SWPB emulation handler
+[    1.082286] qca8k-ipq4019 c000000.switch: configuring for fixed/internal link mode
+[    1.082534] qca8k-ipq4019 c000000.switch: Link is Up - 1Gbps/Full - flow control rx/tx
+[    1.169879] qca8k-ipq4019 c000000.switch lan (uninitialized): PHY [90000.mdio-1:03] driver [Qualcomm QCA8072] (irq=POLL)
+[    1.251348] qca8k-ipq4019 c000000.switch wan (uninitialized): PHY [90000.mdio-1:04] driver [Qualcomm QCA8072] (irq=POLL)
+[    1.252362] DSA: tree 0 setup
+[    1.262284] clk: Disabling unusˇ^@[    1.278526] VFS: Mounted root (squashfs filesystem) readonly on device 31:16.
+[    1.280525] Freeing unused kernel image (initmem) memory: 1024K
+[    1.284878] Run /sbin/init as init process
+[    1.869287] init: Console is alive
+[    1.869667] init: - watchdog -
+[    3.146203] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    3.525090] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.525172] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.529818] xhci-hcd xhci-hcd.0.auto: hcc params 0x0228f665 hci version 0x100 quirks 0x0000008002010010
+[    3.537143] xhci-hcd xhci-hcd.0.auto: irq 103, io mem 0x08a00000
+[    3.546657] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.552682] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.558002] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    3.566239] hub 1-0:1.0: USB hub found
+[    3.572190] hub 1-0:1.0: 1 port detected
+[    3.576303] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    3.583279] hub 2-0:1.0: USB hub found
+[    3.588079] hub 2-0:1.0: 1 port detected
+[    3.592076] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.595660] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.601215] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220f665 hci version 0x100 quirks 0x0000008002010010
+[    3.608572] xhci-hcd xhci-hcd.1.auto: irq 104, io mem 0x06000000
+[    3.618077] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.624122] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.629435] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    3.637738] hub 3-0:1.0: USB hub found
+[    3.643596] hub 3-0:1.0: 1 port detected
+[    3.647745] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    3.651960] hub 4-0:1.0: USB hub found
+[    3.660488] hub 4-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    3.665401] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[    3.677196] init: - preinit -
+[    4.739321] random: jshn: uninitialized urandom read (4 bytes read)
+[    4.784275] random: jshn: uninitialized urandom read (4 bytes read)
+[    4.809200] random: jshn: uninitialized urandom read (4 bytes read)
+[    4.997122] ipqess-edma c080000.ethernet eth0: configuring for fixed/internal link mode
+[    4.997816] device eth0 entered promiscuous mode
+[    5.003976] qca8k-ipq4019 c000000.switch lan: configuring for phy/psgmii link mode
+[    5.008914] ipqess-edma c080000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+[    5.686002] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    5.747000] random: procd: uninitialized urandom read (4 bytes read)
+Press the [f] key and hit [enter] to enter failsafe mode
+Press the [1], [2], [3] or [4] key and hit [enter] to select the debug level
+[    7.987267] mount_root: jffs2 not ready yet, using temporary tmpfs overlay
+[    7.990826] urandom-seed: Seed file not found (/etc/urandom.seed)
+[    8.216711] device eth0 left promiscuous mode
+[    8.222770] procd: - early -
+[    8.222990] procd: - watchdog -
+[    8.887875] procd: - watchdog -
+[    9.044760] procd: - ubus -
+[    9.106498] random: crng init done
+[    9.106544] random: 6 urandom warning(s) missed due to ratelimiting
+[    9.227338] procd: - init -
+Please press Enter to activate this console.
+[    9.970823] kmodloader: loading kernel modules from /etc/modules.d/*
+[   10.190787] Loading modules backported from Linux version v6.1.110-0-g5f55cad62cc9d
+[   10.190840] Backport generated by backports.git v6.1.110-1-0-g965f73fc
+[   10.291724] PPP generic driver version 2.4.2
+[   10.292842] NET: Registered PF_PPPOX protocol family
+[   10.871800] urngd: v1.0.2 started.
+[   11.756181] ath10k_ahb a000000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003b00ff sub 0000:0000
+[   11.756252] ath10k_ahb a000000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+[   11.768131] ath10k_ahb a000000.wifi: firmware ver 10.4b-ct-4019-fW-13-5ae337bb1 api 5 features mfp,peer-flow-ctrl,txstatus-noack,wmi-10.x-CT,ratemask-CT,regdump-CT,txrate-CT,flush-all-CT,pingpong-CT,ch-regs-CT,nop-CT,set-special-CT,tx-rc-CT,cust-stats-CT,txrate2-CT,beacon-cb-CT,wmi-block-ack-CT,wmi-bcn-rc-CT crc32 6b2b5c5b
+[   11.825098] ath10k_ahb a000000.wifi: Loading BDF type 0
+[   11.945488] ath10k_ahb a000000.wifi: board_file api 2 bmi_id 0:20 crc32 d140cd7d
+[   13.238458] ath10k_ahb a000000.wifi: 10.4 wmi init: vdevs: 16  peers: 48  tid: 96
+[   13.238527] ath10k_ahb a000000.wifi: msdu-desc: 2500  skid: 32
+[   13.287118] ath10k_ahb a000000.wifi: wmi print 'P 48/48 V 16 K 144 PH 176 T 186  msdu-desc: 2500  sw-crypt: 0 ct-sta: 0'
+[   13.288069] ath10k_ahb a000000.wifi: wmi print 'free: 53252 iram: 13432 sram: 35752'
+[   13.442732] ath10k_ahb a000000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal pre-cal-nvmem max-sta 32 raw 0 hwcrypto 1
+[   15.043097] ath10k_ahb a800000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003b00ff sub 0000:0000
+[   15.043191] ath10k_ahb a800000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+[   15.055057] ath10k_ahb a800000.wifi: firmware ver 10.4b-ct-4019-fW-13-5ae337bb1 api 5 features mfp,peer-flow-ctrl,txstatus-noack,wmi-10.x-CT,ratemask-CT,regdump-CT,txrate-CT,flush-all-CT,pingpong-CT,ch-regs-CT,nop-CT,set-special-CT,tx-rc-CT,cust-stats-CT,txrate2-CT,beacon-cb-CT,wmi-block-ack-CT,wmi-bcn-rc-CT crc32 6b2b5c5b
+[   15.112145] ath10k_ahb a800000.wifi: Loading BDF type 0
+[   15.124141] ath10k_ahb a800000.wifi: board_file api 2 bmi_id 0:21 crc32 d140cd7d
+[   16.417309] ath10k_ahb a800000.wifi: 10.4 wmi init: vdevs: 16  peers: 48  tid: 96
+[   16.417377] ath10k_ahb a800000.wifi: msdu-desc: 2500  skid: 32
+[   16.466158] ath10k_ahb a800000.wifi: wmi print 'P 48/48 V 16 K 144 PH 176 T 186  msdu-desc: 2500  sw-crypt: 0 ct-sta: 0'
+[   16.467145] ath10k_ahb a800000.wifi: wmi print 'free: 53252 iram: 13432 sram: 35752'
+[   16.605451] ath10k_ahb a800000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal pre-cal-nvmem max-sta 32 raw 0 hwcrypto 1
+[   16.729573] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   43.356958] ipqess-edma c080000.ethernet eth0: Link is Down
+[   43.362555] ipqess-edma c080000.ethernet eth0: configuring for fixed/internal link mode
+[   43.362846] ipqess-edma c080000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+[   43.366571] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   43.381651] device eth0 entered promiscuous mode
+[   43.384016] qca8k-ipq4019 c000000.switch lan: configuring for phy/psgmii link mode
+[   43.390123] br-lan: port 1(lan) entered blocking state
+[   43.396230] br-lan: port 1(lan) entered disabled state
+[   43.401916] device lan entered promiscuous mode
+[   43.426222] qca8k-ipq4019 c000000.switch wan: configuring for phy/psgmii link mode
+[   43.742420] jffs2_scan_eraseblock(): End of filesystem marker found at 0x0
+[   43.742506] jffs2_build_filesystem(): unlocking the mtd device... 
+[   43.742515] done.
+[   43.754376] jffs2_build_filesystem(): erasing all blocks after the end marker... 
+[   46.558391] qca8k-ipq4019 c000000.switch wan: Link is Up - 1Gbps/Full - flow control rx/tx
+[   46.558405] IPv6: ADDRCONF(NETDEV_CHANGE): wan: link becomes ready
+[   68.715455] done.
+[   68.715507] jffs2: notice: (1818) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+[   68.928791] overlayfs: upper fs does not support tmpfile.
